@@ -7,8 +7,8 @@ echo P: drive must be set
 goto end
 
 :pfound
-p:\RHS_Compare\ArmaConfigParser.exe -path=p:\RHS_Compare -r
-for /r p:\RHS_Compare %%A in (*) do (
+p:\rhs_compare\ArmaConfigParser.exe -path=p:\rhs_compare -r
+for /r p:\rhs_compare %%A in (*) do (
 	if "%%~nxA"=="config.cpp" (del /q %%~dpnxA) 
 )
 

@@ -12,9 +12,9 @@ pause
 
 :cpfile
 echo %2
-if exist p:\RHS_Compare\%1 (rmdir /s/q p:\RHS_Compare\%1 )
-mkdir p:\RHS_Compare\%1
-copy %2 p:\RHS_Compare\%1\config.cpp 1>NUL
+if exist p:\rhs_compare\%1 (rmdir /s/q p:\rhs_compare\%1 )
+mkdir p:\rhs_compare\%1
+copy %2 p:\rhs_compare\%1\config.cpp 1>NUL
 goto eof
 
 :finddir

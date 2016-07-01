@@ -15,5 +15,14 @@ del ace_dagr.pbo
 del ace_rangecard.pbo
 del ace_scopes.pbo
 del ace_frag.pbo
+del ace_sitting.pbo
+
+cd ..\..\acex\addons
+del *.pbo
+
+py %0\..\..\acex\tools\build.py
+
+del acex_headless.pbo
+del acex_viewrestriction.pbo
 
 pause

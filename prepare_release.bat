@@ -3,17 +3,20 @@
 
 cd ..\release
 
-mkdir @a3cs
-mkdir @a3cs_server
-cd @a3cs_server
+RD /q /s @A3CS
+RD /q /s @A3CS_Server
+
+mkdir @A3CS
+mkdir @A3CS_Server
+cd @A3CS_Server
 mkdir addons
 
 :: Copy ACE
 
 cd ..\..\
-xcopy /s "ace\release\@ace" release\@a3cs
+xcopy /s "ace\release\@ace" "release\@A3CS"
 
-cd release\@a3cs
+cd release\@A3CS
 RD /q /s keys
 RD /q /s optionals
 del AUTHORS.txt
@@ -40,20 +43,39 @@ del ace_dagr.pbo
 del ace_rangecard.pbo
 del ace_scopes.pbo
 del ace_frag.pbo
+del ace_sitting.pbo
+
+del *.bisign
+
+:: Copy ACEX
+
+cd ..\..\..\
+xcopy /s "acex\release\@acex\addons" "release\@A3CS\addons"
+
+cd release\@A3CS\addons
+
+del acex_headless.pbo
+del acex_viewrestriction.pbo
 
 del *.bisign
 
 :: Copy A3CS
 
 cd ..\..\..\
-xcopy /s "a3cs\release\@a3cs" release\@a3cs
+xcopy /s "a3cs\release\@a3cs" "release\@A3CS"
 
-cd release\@a3cs
+cd release\@A3CS
 RD /q /s keys
 
-cd addons
+cd ..\..\a3cs
 
-xcopy /s a3cs_server.pbo ..\..\@a3cs_server\addons
+xcopy /s version.a3c "..\release\@A3CS"
+
+:: Prepare a3cs_server
+
+cd ..\release\@A3CS\addons
+
+xcopy /s a3cs_server.pbo "..\..\@A3CS_Server\addons"
 del a3cs_server.pbo
 del *.bisign
 

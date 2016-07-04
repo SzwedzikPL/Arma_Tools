@@ -33,6 +33,7 @@ if defined _ARMA3PATH goto found_A3
 
 if exist p:\rhsafrf (rmdir /s/q p:\rhsafrf)
 if exist p:\rhsusf (rmdir /s/q p:\rhsusf)
+if exist p:\rhsgref (rmdir /s/q p:\rhsgref)
 
 if not exist "%_ARMA3PATH%\@RHSAFRF\addons" goto noafrf
 extractpbo -p "%_ARMA3PATH%\@RHSAFRF\addons" p:\
@@ -40,11 +41,17 @@ extractpbo -p "%_ARMA3PATH%\@RHSAFRF\addons" p:\
 if not exist "%_ARMA3PATH%\@RHSUSAF\addons" goto nousaf
 extractpbo -p "%_ARMA3PATH%\@RHSUSAF\addons" p:\
 
+if not exist "%_ARMA3PATH%\@RHSGREF\addons" goto nogref
+extractpbo -p "%_ARMA3PATH%\@RHSGREF\addons" p:\
+
 :noafrf
 echo @RHSAFRF not found
 
 :nousaf
 echo @RHSUSAF not found
+
+:nogref
+echo @RHSGREF not found
 
 :end
 @exit /B 0

@@ -29,6 +29,9 @@ for /r p:\rhsafrf\addons %%A in (*) do (
 for /r p:\rhsusf\addons %%A in (*) do (
 	if "%%~nxA"=="config.cpp" (call :finddir %%~dpA %%~dpnxA)	
 )
+for /r p:\rhsgref\addons %%A in (*) do (
+	if "%%~nxA"=="config.cpp" (call :finddir %%~dpA %%~dpnxA)	
+)
 goto end
 
 :eof

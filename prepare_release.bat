@@ -44,6 +44,7 @@ del ace_rangecard.pbo
 del ace_scopes.pbo
 del ace_frag.pbo
 del ace_sitting.pbo
+del ace_advanced_fatigue.pbo
 
 del *.bisign
 
